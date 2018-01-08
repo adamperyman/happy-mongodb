@@ -1,0 +1,13 @@
+sudo: required
+services:
+  - docker
+script:
+  - docker build -t adamperyman/happy-mongodb:$TRAVIS_BRANCH .
+  - docker build -t adamperyman/happy-mongodb:latest .
+before_deploy:
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+deploy:
+  - provider: script
+    script: docker push adamperyman/happy-mongodb:$TRAVIS_BRANCH && docker push adamperyman/happy-mongodb:latest
+    on:
+      branch: "*"

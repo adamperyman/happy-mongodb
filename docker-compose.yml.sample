@@ -1,0 +1,19 @@
+version: '3.5'
+services:
+  mongodb:
+    container_name: happy-mongodb
+    image: adamperyman/happy-mongodb
+    ports:
+      - 27017:27017
+    environment:
+      - AUTH=yes
+      - MONGODB_ADMIN_USER=adminUser
+      - MONGODB_ADMIN_PASS=1234
+      - MONGODB_APPLICATION_DATABASE=app
+      - MONGODB_APPLICATION_USER=appUser
+      - MONGODB_APPLICATION_PASS=4321
+      # Data volume must be the same as host dir below.
+      - MONGODB_DATA_VOLUME=/data/app
+    volumes:
+      # Host dir must be the same as $MONGODB_DATA_VOLUME
+      - /data/app:/data/db
