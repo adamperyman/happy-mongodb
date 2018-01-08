@@ -6,7 +6,7 @@ A plug-and-play MongoDB image with authorisation.
 
 # Usage
 * The following env vars are required, a sample `docker-compose.yml` file has been provided.
-  - `MONGODB_DATA_VOLUME // Must be the same as whatever host dir you are using to store your database, see `docker-compose.yml.sample`.
+  - `MONGODB_DATA_VOLUME // Must be the same as whatever host dir you are using to store your database, see docker-compose.yml.sample`.
   - `MONGODB_ADMIN_USER`
   - `MONGODB_ADMIN_PASS`
   - `MONGODB_APPLICATION_DATABASE`
