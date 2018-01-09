@@ -28,7 +28,7 @@ if [ -z ${MONGODB_APPLICATION_PASS+x} ]; then
 fi
 
 if [ -z ${MONGODB_DATA_VOLUME+x} ]; then
-  echo "ENV variable MONGODB_APPLICATION_PASS is undefined."
+  echo "ENV variable MONGODB_DATA_VOLUME is undefined."
   exit 1
 fi
 
